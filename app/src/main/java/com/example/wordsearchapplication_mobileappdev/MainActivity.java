@@ -1,5 +1,8 @@
 package com.example.wordsearchapplication_mobileappdev;
 
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.view.View;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 timerView.startTimer(5 * 60 * 1000); // 5 minutes in milliseconds
             }
         });
+    }
+    public void gotoSecondActivty (View v)
+    {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
 
     @Override

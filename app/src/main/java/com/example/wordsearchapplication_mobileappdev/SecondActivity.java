@@ -1,0 +1,71 @@
+package com.example.wordsearchapplication_mobileappdev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class SecondActivity extends AppCompatActivity {
+    private Button soundtrackOne;
+    private Button soundtrackTwo;
+    private Button soundtrackThree;
+    private Button turnMusicOff;
+    private MediaPlayer mediaPlayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        soundtrackOne = findViewById(R.id.soundtrackOne);
+        soundtrackTwo = findViewById(R.id.soundtrackTwo);
+        soundtrackThree = findViewById(R.id.soundtrackThree);
+        turnMusicOff = findViewById(R.id.turnMusicOff);
+
+        mediaPlayer = new MediaPlayer();
+
+        soundtrackOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundtrack(R.raw.one);
+            }
+        });
+
+        soundtrackTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundtrack(R.raw.two);
+            }
+        });
+
+        soundtrackThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundtrack(R.raw.three);
+            }
+        });
+
+        turnMusicOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                    mediaPlayer.release();
+                    mediaPlayer = new MediaPlayer();
+                }
+            }
+        });
+    }
+
+    private void playSoundtrack(int soundtrackResource) {
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
+        mediaPlayer = MediaPlayer.create(this, soundtrackResource);
+        mediaPlayer.start();
+    }
+
+}
