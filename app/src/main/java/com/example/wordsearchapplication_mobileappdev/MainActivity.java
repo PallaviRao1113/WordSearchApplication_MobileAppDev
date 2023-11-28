@@ -21,4 +21,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoThirdActivty (View v)
+    {
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
+
 }
