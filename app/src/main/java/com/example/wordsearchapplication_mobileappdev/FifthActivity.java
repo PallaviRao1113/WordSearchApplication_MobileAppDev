@@ -9,18 +9,18 @@ import android.widget.GridLayout;
 import android.widget.Toast;
 import java.util.Random;
 
-public class ThirdActivity extends AppCompatActivity {
-    private static final int GRID_SIZE = 3;
+public class FifthActivity extends AppCompatActivity {
+    private static final int GRID_SIZE = 7;
     private GridLayout gridLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        setContentView(R.layout.activity_fifth);
         gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
     }
     private void generateAndDisplayLayout() {
-        String[] words = {"cat", "dog", "cow", "sun", "job", "dad", "mom", "kid", "car", "rug", "boy", "two", "day"};
+        String[] words = {"ladybug", "natural", "science", "vitamin", "victory", "weather", "teacher", "fiction", "fifteen", "imagine"};
         int randomRow = (int) (Math.random() * GRID_SIZE);
         for (int i = 0; i < GRID_SIZE; i++) {
             char[] rowContent;
@@ -51,7 +51,7 @@ public class ThirdActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ThirdActivity.this, "Button Clicked: " + buttonText, Toast.LENGTH_SHORT).show();
+                Toast.makeText(FifthActivity.this, "Button Clicked: " + buttonText, Toast.LENGTH_SHORT).show();
             }
         });
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();

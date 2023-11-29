@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B03A9F4"
     tools:context=".MainActivity">
 
     <Button
@@ -14,47 +15,75 @@
         android:layout_marginTop="267dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="152dp"
-        android:onClick="gotoSecondActivty"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoSecondActivity"
         android:text="CHOOSE MUSIC"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/easy"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/easy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="211dp"
-        android:onClick="gotoThirdActivty"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoThirdActivity"
         android:text="EASY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/medium"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/medium"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginBottom="211dp"
-        android:onClick="gotoFourthActivty"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="132dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoFourthActivity"
         android:text="MEDIUM"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/easy" />
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easy" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="211dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="148dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoFifthActivity"
         android:text="HARD"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/medium" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+    <TextView
+        android:id="@+id/wordSearchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="sans-serif-black"
+        android:text="WORD SEARCH"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

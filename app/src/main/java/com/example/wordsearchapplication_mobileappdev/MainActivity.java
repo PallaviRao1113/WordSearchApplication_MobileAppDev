@@ -13,18 +13,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void gotoSecondActivty (View v)
+    public void gotoSecondActivity (View v)
     {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
 
-    public void gotoThirdActivty (View v)
+    public void gotoThirdActivity (View v)
     {
         Intent intent = new Intent(this, ThirdActivity.class);
         startActivity(intent);
     }
 
+    public void gotoFourthActivity (View v)
+    {
+        Intent intent = new Intent(this, FourthActivity.class);
+        startActivity(intent);
+    }
 
-
+    public void gotoFifthActivity (View v)
+    {
+        Intent intent = new Intent(this, FifthActivity.class);
+        startActivity(intent);
+    }
 }

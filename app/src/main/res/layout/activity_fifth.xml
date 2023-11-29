@@ -8,7 +8,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".ThirdActivity">
+    tools:context=".FifthActivity">
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -19,8 +19,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:columnCount="3"
-        android:rowCount="3" />
+        android:columnCount="7"
+        android:rowCount="7" />
 
     <Button
         android:id="@+id/back"

@@ -4,42 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B03A9F4"
     tools:context=".SecondActivity">
 
     <Button
         android:id="@+id/soundtrackOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="19dp"
+        android:backgroundTint="#03A9F4"
         android:text="Soundtrack 1"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/soundtrackTwo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/selectMusicTextView" />
 
     <Button
         android:id="@+id/soundtrackTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="109dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="#03A9F4"
         android:text="Soundtrack 2"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/soundtrackThree"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soundtrackOne" />
 
     <Button
         android:id="@+id/soundtrackThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="139dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="73dp"
+        android:backgroundTint="#03A9F4"
         android:text="Soundtrack 3"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/turnMusicOff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soundtrackTwo" />
@@ -48,28 +60,42 @@
         android:id="@+id/turnMusicOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="65dp"
+        android:backgroundTint="#03A9F4"
         android:text="OFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/soundtrackThree" />
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="129dp"
-        android:onClick="gotoMainActivty"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="46dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoMainActivity"
         android:text="Back To Main Screen"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/turnMusicOff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/selectMusicTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Choose Background Music"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soundtrackThree" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
