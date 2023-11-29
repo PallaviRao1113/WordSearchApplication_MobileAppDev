@@ -22,7 +22,6 @@ public class SecondActivity extends AppCompatActivity {
         soundtrackTwo = findViewById(R.id.soundtrackTwo);
         soundtrackThree = findViewById(R.id.soundtrackThree);
         turnMusicOff = findViewById(R.id.turnMusicOff);
-
         mediaPlayer = new MediaPlayer();
 
         soundtrackOne.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +47,6 @@ public class SecondActivity extends AppCompatActivity {
 
         turnMusicOff.setOnClickListener(new View.OnClickListener() {
             @Override
-
             public void onClick(View view) {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.stop();
@@ -67,10 +65,10 @@ public class SecondActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, soundtrackResource);
         mediaPlayer.start();
     }
-    public void gotoMainActivty (View v)
+
+    public void gotoMainActivity (View v)
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }
