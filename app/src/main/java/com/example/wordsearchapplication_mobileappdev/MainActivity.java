@@ -1,16 +1,10 @@
 package com.example.wordsearchapplication_mobileappdev;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.view.View;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.wordsearchapplication_mobileappdev.CountDownTimerView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         timerView = findViewById(R.id.timerView);
 
         Button easyButton = findViewById(R.id.easyButton);
@@ -48,18 +41,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    }
+
+
+
+
+
+
     public void gotoSecondActivty (View v)
     {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
+
     public void gotoThirdActivty (View v)
     {
         Intent intent = new Intent(this, ThirdActivity.class);
         startActivity(intent);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
