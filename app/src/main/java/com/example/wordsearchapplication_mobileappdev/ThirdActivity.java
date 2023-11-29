@@ -4,46 +4,62 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.Toast;
+import java.util.Random;
 
 public class ThirdActivity extends AppCompatActivity {
-    private TextView textView;
+    private static final int GRID_SIZE = 3;
+    private GridLayout gridLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-        textView = findViewById(R.id.textView);
+        gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
     }
+    private void generateAndDisplayLayout() {
+        String[] words = {"cat", "dog", "cow", "sun", "job", "dad", "mom", "kid", "car", "rug", "boy", "two", "day"};
+        int randomRow = (int) (Math.random() * GRID_SIZE);
+        for (int i = 0; i < GRID_SIZE; i++) {
+            char[] rowContent;
+            if (i == randomRow) {
+                String selectedWord = words[new Random().nextInt(words.length)];
+                rowContent = selectedWord.toCharArray();
+            } else {
+                rowContent = new char[GRID_SIZE];
+                for (int j = 0; j < GRID_SIZE; j++) {
+                    rowContent[j] = getRandomEnglishLetter();
+                }
+            }
+            for (int j = 0; j < GRID_SIZE; j++) {
+                addButtonToGrid(Character.toString(rowContent[j]));
+            }
+        }
+    }
+
     private char getRandomEnglishLetter() {
         int randomChar = (int) (Math.random() * 26) + 'a';
         return (char) randomChar;
     }
-    private String getRandomEnglishWord() {
-        String[] words = {"apple", "candy", "brown", "grape", "straw", "berry", "truck", "plane", "panda", "tiger", "horse", "award", "enjoy", "enter", "grass", "funny", "metal"};
-        int randomIndex = (int) (Math.random() * words.length);
-        return words[randomIndex];
-    }
-    private void generateAndDisplayLayout() {
-        char[][] layout = new char[5][5];
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                layout[i][j] = getRandomEnglishLetter();
+
+    private void addButtonToGrid(String buttonText) {
+        Button button = new Button(this);
+        button.setText(buttonText);
+        button.setTextSize(18);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ThirdActivity.this, "Button Clicked: " + buttonText, Toast.LENGTH_SHORT).show();
             }
-        }
-        int randomRow = (int) (Math.random() * 5);
-        String randomWord = getRandomEnglishWord();
-        for (int i = 0; i < 5; i++) {
-            layout[randomRow][i] = randomWord.charAt(i);
-        }
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                stringBuilder.append(layout[i][j]);
-            }
-            stringBuilder.append("\n");
-        }
-        textView.setText(stringBuilder.toString());
+        });
+        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+        params.width = 0;
+        params.height = GridLayout.LayoutParams.WRAP_CONTENT;
+        params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+        button.setLayoutParams(params);
+        gridLayout.addView(button);
     }
     public void gotoMainActivty (View v)
     {
