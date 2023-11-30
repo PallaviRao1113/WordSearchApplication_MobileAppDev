@@ -63,6 +63,15 @@ public class SecondActivity extends AppCompatActivity {
             mediaPlayer.release();
         }
         mediaPlayer = MediaPlayer.create(this, soundtrackResource);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer newMedia)
+            {
+                newMedia.seekTo(0);
+                newMedia.start();
+            }
+        });
         mediaPlayer.start();
     }
 
