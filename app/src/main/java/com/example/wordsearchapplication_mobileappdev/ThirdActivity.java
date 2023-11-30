@@ -85,10 +85,12 @@ public class ThirdActivity extends AppCompatActivity {
             if (isWord(selectedWord)) {
                 Log.d("WordCheck", "Valid Word! Navigating to MainActivity");
                 // Word is valid, navigate to the desired activity
-                // CHANGE THIS TO GO TO POINT SYSTEM
+                // CHANGE THIS TO GO TO POINT SYSTEM RIGHT SCReEN
                 gotoMainActivity();
             } else {
                 Log.d("WordCheck", "Not a valid word");
+                // CHANGE THIS TO GO TO POINT SYSTEM WRONG SCReEN
+                //gotoMainActivity();
             }
 
             // Clear selected letters for the next word
