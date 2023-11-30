@@ -8,16 +8,21 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.Toast;
 import java.util.Random;
+import com.example.wordsearchapplication_mobileappdev.CountDownTimerView;
 
 public class ThirdActivity extends AppCompatActivity {
     private static final int GRID_SIZE = 3;
     private GridLayout gridLayout;
+    public CountDownTimerView timerr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
+        timerr = findViewById(R.id.timerr);
+        timerr.startTimer(15 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
         String[] words = {"cat", "dog", "cow", "sun", "job", "dad", "mom", "kid", "car", "rug", "boy", "two", "day"};

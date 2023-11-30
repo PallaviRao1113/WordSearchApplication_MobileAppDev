@@ -17,13 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         timerView = findViewById(R.id.timerView);
 
-        Button easyButton = findViewById(R.id.easyButton);
+        Button easy = findViewById(R.id.easy);
+        //Button easyButton = findViewById(R.id.easyButton);
         Button mediumButton = findViewById(R.id.mediumButton);
         Button hardButton = findViewById(R.id.hardButton);
 
-        easyButton.setOnClickListener(new View.OnClickListener() {
+        easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gotoThirdActivty();
                 timerView.startTimer(15 * 60 * 1000); // 15 minutes in milliseconds
             }
         });
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoThirdActivty (View v)
+    public void gotoThirdActivty ()
     {
         Intent intent = new Intent(this, ThirdActivity.class);
         startActivity(intent);
