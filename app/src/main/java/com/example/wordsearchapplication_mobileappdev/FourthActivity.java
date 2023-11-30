@@ -20,7 +20,7 @@ public class FourthActivity extends AppCompatActivity {
         generateAndDisplayLayout();
     }
     private void generateAndDisplayLayout() {
-        String[] words = {"candy", "straw", "berry"};
+        String[] words = {"candy", "straw", "berry", "truck", "apple", "happy", "block", "fruit", "tiger", "river", "child", "money"};
         int randomRow = (int) (Math.random() * GRID_SIZE);
         for (int i = 0; i < GRID_SIZE; i++) {
             char[] rowContent;
