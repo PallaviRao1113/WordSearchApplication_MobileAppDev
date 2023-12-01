@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B03A9F4"
     tools:context=".MainActivity">
-
 
     <Button
         android:id="@+id/button2"
@@ -15,12 +15,16 @@
         android:layout_marginTop="267dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="152dp"
-        android:onClick="gotoSecondActivty"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoSecondActivity"
         android:text="CHOOSE MUSIC"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/easy"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -37,7 +41,6 @@
             android:layout_marginEnd="16dp" />
 
     </RelativeLayout>
-
 
     <Button
         android:id="@+id/mediumButton"
@@ -67,21 +70,68 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <Button
         android:id="@+id/easy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="318dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="106dp"
-        android:onClick="gotoThirdActivty"
-        android:text="Easy"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoThirdActivity"
+        android:text="EASY"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="132dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoFourthActivity"
+        android:text="MEDIUM"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easy" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="148dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoFifthActivity"
+        android:text="HARD"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+    <TextView
+        android:id="@+id/wordSearchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="sans-serif-black"
+        android:text="WORD SEARCH"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <TextView
         android:id="@+id/messageTextView"

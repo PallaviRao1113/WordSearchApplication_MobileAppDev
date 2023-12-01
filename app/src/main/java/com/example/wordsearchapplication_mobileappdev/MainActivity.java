@@ -117,4 +117,28 @@ public class MainActivity extends AppCompatActivity {
         TextView messageTextView = findViewById(R.id.messageTextView);
         messageTextView.setText(message);
     }
+
+    public void gotoSecondActivity (View v)
+    {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoThirdActivity (View v)
+    {
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoFourthActivity (View v)
+    {
+        Intent intent = new Intent(this, FourthActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoFifthActivity (View v)
+    {
+        Intent intent = new Intent(this, FifthActivity.class);
+        startActivity(intent);
+    }
 }
