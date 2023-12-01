@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -18,6 +19,8 @@ public class ThirdActivity extends AppCompatActivity {
     private StringBuilder selectedLetters = new StringBuilder();
     private GridLayout gridLayout;
     public CountDownTimerView timerr;
+
+    private int points;  // Declare points at the class level
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,18 +89,20 @@ public class ThirdActivity extends AppCompatActivity {
                 Log.d("WordCheck", "Valid Word! Navigating to MainActivity");
                 // Word is valid, navigate to the desired activity
                 // CHANGE THIS TO GO TO POINT SYSTEM RIGHT SCReEN
-                gotoMainActivity();
+                gotoCheckPointsActivity();
+                awardPoints(1);
+
             } else {
                 Log.d("WordCheck", "Not a valid word");
                 // CHANGE THIS TO GO TO POINT SYSTEM WRONG SCReEN
-                //gotoMainActivity();
+                deductPoints(1);
+                gotoCheckPointsActivity();
             }
 
             // Clear selected letters for the next word
             selectedLetters.setLength(0);
         }
     }
-
 
     private boolean isWord(String selectedWord) {
         // Implement your logic to check if the selected word is valid
@@ -117,4 +122,29 @@ public class ThirdActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
+
+    public void gotoCheckPointsActivity(){
+        Intent intent = new Intent(this, CheckPointsActivity.class);
+        intent.putExtra("points", points);
+        startActivity(intent);
+    }
+
+    private void awardPoints(int pointsToAdd) {
+        points += pointsToAdd;
+        displayMessage("That's right! Here is " + pointsToAdd + " stars!");
+    }
+
+    private void deductPoints(int pointsToDeduct) {
+        points -= pointsToDeduct;
+        if (points < 0) {
+            points = 0;
+        }
+        displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " stars");
+    }
+
+    private void displayMessage(String message) {
+        TextView messageTextView = findViewById(R.id.messageTextView);
+        messageTextView.setText(message);
+    }
+
 }

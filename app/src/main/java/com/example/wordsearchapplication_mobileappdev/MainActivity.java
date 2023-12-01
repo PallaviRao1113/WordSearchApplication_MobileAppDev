@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Button wrongButton = findViewById(R.id.wrongButton);
         Button checkPointsButton = findViewById(R.id.checkPointsButton);
 
+
         correctButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
         checkPointsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CheckPointsActivity.class);
-                intent.putExtra("points", points);
-                startActivity(intent);
+                gotoCheckPointsActivity();
+
             }
         });
 
@@ -86,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ThirdActivity.class);
         startActivity(intent);
     }
+
+    public void gotoCheckPointsActivity(){
+        Intent intent = new Intent(this, CheckPointsActivity.class);
+        intent.putExtra("points", points);
+        startActivity(intent);
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

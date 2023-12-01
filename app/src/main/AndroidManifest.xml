@@ -18,7 +18,7 @@
             android:label="@string/title_activity_error_screen"
             android:theme="@style/Theme.WordSearchApplication_MobileAppDev" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".CheckPointsActivity"
             android:exported="false" />
         <activity
             android:name=".FifthActivity"
