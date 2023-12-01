@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390183650314",
+    "project_id": "wordsearchapp-797dd",
+    "storage_bucket": "wordsearchapp-797dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390183650314:android:288181a069d5aecad44bf3",
+        "android_client_info": {
+          "package_name": "com.example.wordsearchapplication_mobileappdev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPYyyoxMN4LqX5Xcj3Ptfizpm1e0vqV9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
