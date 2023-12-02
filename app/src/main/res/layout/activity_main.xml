@@ -17,19 +17,35 @@
         android:layout_marginBottom="152dp"
         android:backgroundTint="#03A9F4"
         android:onClick="gotoSecondActivity"
-        android:text="CHOOSE MUSIC"
+        android:text="CHOOSE MUSIC!"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/easy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.example.wordsearchapplication_mobileappdev.CountDownTimerView
+            android:id="@+id/timerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/easy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="17dp"
@@ -41,10 +57,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
         android:id="@+id/medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
         android:layout_marginStart="132dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="132dp"
@@ -53,14 +70,13 @@
         android:text="MEDIUM"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/easy" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
         android:layout_marginStart="147dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="148dp"
@@ -85,5 +101,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/checkPointsButton"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#03A9F4"
+        android:text="CHECK POINTS!"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/easy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
