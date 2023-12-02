@@ -145,4 +145,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FifthActivity.class);
         startActivity(intent);
     }
+    public void gotoErrorScreen ()
+    {
+        Intent intent = new Intent(this, Error_Screen.class);
+        startActivity(intent);
+    }
 }

@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Random;
 import com.example.wordsearchapplication_mobileappdev.CountDownTimerView;
 
-public class ThirdActivity extends AppCompatActivity {
+public class ThirdActivity extends AppCompatActivity implements CountDownTimerView.OnTimerFinishListener  {
     private static final int GRID_SIZE = 3;
     private StringBuilder selectedLetters = new StringBuilder();
     private GridLayout gridLayout;
@@ -29,6 +29,7 @@ public class ThirdActivity extends AppCompatActivity {
         gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
         timerr = findViewById(R.id.timerr);
+        timerr.setOnTimerFinishListener(this); // Set the listener
         timerr.startTimer(15 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
@@ -145,6 +146,10 @@ public class ThirdActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView messageTextView = findViewById(R.id.messageTextView);
         messageTextView.setText(message);
+    }
+    public void onTimerFinish() {
+        // Handle what to do when the timer finishes
+        gotoMainActivity();
     }
 
 }

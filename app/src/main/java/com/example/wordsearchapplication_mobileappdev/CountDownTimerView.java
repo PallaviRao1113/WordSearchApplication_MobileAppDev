@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 public class CountDownTimerView extends androidx.appcompat.widget.AppCompatTextView {
     private CountDownTimer countDownTimer;
+    private OnTimerFinishListener onTimerFinishListener;
     public interface OnTimerFinishListener {
         void onTimerFinish();
     }
-    private OnTimerFinishListener onTimerFinishListener;
     public void setOnTimerFinishListener(OnTimerFinishListener listener) {
         this.onTimerFinishListener = listener;
     }

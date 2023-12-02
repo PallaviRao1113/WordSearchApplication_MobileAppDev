@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FifthActivity extends AppCompatActivity {
+public class FifthActivity extends AppCompatActivity implements CountDownTimerView.OnTimerFinishListener{
     private static final int GRID_SIZE = 7;
     private StringBuilder selectedLetters = new StringBuilder();
     public CountDownTimerView timerr;
@@ -27,6 +27,7 @@ public class FifthActivity extends AppCompatActivity {
         gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
         timerr = findViewById(R.id.timerr);
+        timerr.setOnTimerFinishListener(this);
         timerr.startTimer(5 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
@@ -108,7 +109,7 @@ public class FifthActivity extends AppCompatActivity {
         return Arrays.asList(validWords).contains(selectedWord);
     }
 
-    public void gotoMainActivity (View v)
+    public void gotoMainActivity ()
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -142,5 +143,9 @@ public class FifthActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView messageTextView = findViewById(R.id.messageTextView);
         messageTextView.setText(message);
+    }
+    public void onTimerFinish() {
+        // Handle what to do when the timer finishes
+        gotoMainActivity();
     }
 }
