@@ -6,8 +6,17 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 public class CountDownTimerView extends androidx.appcompat.widget.AppCompatTextView {
-
     private CountDownTimer countDownTimer;
+    public interface OnTimerFinishListener {
+        void onTimerFinish();
+    }
+    private OnTimerFinishListener onTimerFinishListener;
+    public void setOnTimerFinishListener(OnTimerFinishListener listener) {
+        this.onTimerFinishListener = listener;
+    }
+
+
+
 
     public CountDownTimerView(Context context) {
         super(context);
@@ -28,6 +37,9 @@ public class CountDownTimerView extends androidx.appcompat.widget.AppCompatTextV
             public void onFinish() {
                 // Timer finished, handle accordingly
                 setText("00:00");
+                if (onTimerFinishListener != null) {
+                    onTimerFinishListener.onTimerFinish();
+                }
             }
         }.start();
     }

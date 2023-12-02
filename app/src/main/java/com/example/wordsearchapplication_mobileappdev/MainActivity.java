@@ -23,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         timerView = findViewById(R.id.timerView);
 
         Button easy = findViewById(R.id.easy);
+        Button medium = findViewById(R.id.medium);
+        Button hard = findViewById(R.id.button);
         //Button easyButton = findViewById(R.id.easyButton);
-        Button mediumButton = findViewById(R.id.mediumButton);
-        Button hardButton = findViewById(R.id.hardButton);
+        //Button mediumButton = findViewById(R.id.mediumButton);
+        //Button hardButton = findViewById(R.id.hardButton);
 
         Button correctButton = findViewById(R.id.correctButton);
         Button wrongButton = findViewById(R.id.wrongButton);
@@ -61,16 +63,18 @@ public class MainActivity extends AppCompatActivity {
                 timerView.startTimer(15 * 60 * 1000); // 15 minutes in milliseconds
             }
         });
-        mediumButton.setOnClickListener(new View.OnClickListener() {
+        medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gotoFourthActivity();
                 timerView.startTimer(10 * 60 * 1000); // 10 minutes in milliseconds
             }
         });
 
-        hardButton.setOnClickListener(new View.OnClickListener() {
+        hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gotoFifthActivity();
                 timerView.startTimer(5 * 60 * 1000); // 5 minutes in milliseconds
             }
         });
@@ -130,13 +134,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoFourthActivity (View v)
+    public void gotoFourthActivity ()
     {
         Intent intent = new Intent(this, FourthActivity.class);
         startActivity(intent);
     }
 
-    public void gotoFifthActivity (View v)
+    public void gotoFifthActivity ()
     {
         Intent intent = new Intent(this, FifthActivity.class);
         startActivity(intent);

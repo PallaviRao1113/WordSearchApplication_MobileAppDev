@@ -95,8 +95,8 @@ public class ThirdActivity extends AppCompatActivity {
             } else {
                 Log.d("WordCheck", "Not a valid word");
                 // CHANGE THIS TO GO TO POINT SYSTEM WRONG SCReEN
-                deductPoints(1);
                 gotoCheckPointsActivity();
+                deductPoints(1);
             }
 
             // Clear selected letters for the next word
