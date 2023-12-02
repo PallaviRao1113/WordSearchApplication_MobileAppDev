@@ -1,7 +1,12 @@
 package com.example.wordsearchapplication_mobileappdev;
 
+import static com.example.wordsearchapplication_mobileappdev.CheckPointsActivity.totalpoints;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -90,14 +95,16 @@ public class ThirdActivity extends AppCompatActivity implements CountDownTimerVi
                 Log.d("WordCheck", "Valid Word! Navigating to MainActivity");
                 // Word is valid, navigate to the desired activity
                 // CHANGE THIS TO GO TO POINT SYSTEM RIGHT SCReEN
-                gotoCheckPointsActivity();
                 awardPoints(1);
+                gotoCheckPointsActivity();
+
 
             } else {
                 Log.d("WordCheck", "Not a valid word");
                 // CHANGE THIS TO GO TO POINT SYSTEM WRONG SCReEN
                 gotoCheckPointsActivity();
                 deductPoints(1);
+
             }
 
             // Clear selected letters for the next word
@@ -131,17 +138,34 @@ public class ThirdActivity extends AppCompatActivity implements CountDownTimerVi
     }
 
     private void awardPoints(int pointsToAdd) {
-        points += pointsToAdd;
-        displayMessage("That's right! Here is " + pointsToAdd + " stars!");
+       // points += pointsToAdd;
+        totalpoints++;
+        displayMessage("That's right! Here is " + pointsToAdd + " star!");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences();
     }
 
     private void deductPoints(int pointsToDeduct) {
-        points -= pointsToDeduct;
-        if (points < 0) {
-            points = 0;
+        //points -= pointsToDeduct;
+        totalpoints--;
+        if (totalpoints < 0) {
+            totalpoints = 0;
         }
-        displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " stars");
+        displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " star");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences();
     }
+
+    private void savePointsToSharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences("appPoints", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        // Save points globally for the app
+        editor.putInt("points", totalpoints);
+        editor.apply();
+    }
+
 
     private void displayMessage(String message) {
         TextView messageTextView = findViewById(R.id.messageTextView);
@@ -151,5 +175,6 @@ public class ThirdActivity extends AppCompatActivity implements CountDownTimerVi
         // Handle what to do when the timer finishes
         gotoMainActivity();
     }
+
 
 }

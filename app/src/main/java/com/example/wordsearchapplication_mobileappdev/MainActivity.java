@@ -1,7 +1,10 @@
 package com.example.wordsearchapplication_mobileappdev;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.Button;
@@ -25,28 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Button easy = findViewById(R.id.easy);
         Button medium = findViewById(R.id.medium);
         Button hard = findViewById(R.id.button);
-        //Button easyButton = findViewById(R.id.easyButton);
-        //Button mediumButton = findViewById(R.id.mediumButton);
-        //Button hardButton = findViewById(R.id.hardButton);
 
-        Button correctButton = findViewById(R.id.correctButton);
-        Button wrongButton = findViewById(R.id.wrongButton);
         Button checkPointsButton = findViewById(R.id.checkPointsButton);
-
-
-        correctButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                awardPoints(10);
-            }
-        });
-
-        wrongButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                deductPoints(10);
-            }
-        });
 
         checkPointsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
     private void awardPoints(int pointsToAdd) {
         points += pointsToAdd;
         displayMessage("That's right! Here is " + pointsToAdd + " stars!");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences(points);
     }
 
     private void deductPoints(int pointsToDeduct) {
@@ -115,7 +101,19 @@ public class MainActivity extends AppCompatActivity {
             points = 0;
         }
         displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " stars");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences(points);
     }
+
+    private void savePointsToSharedPreferences(int points) {
+        SharedPreferences sharedPreferences = getSharedPreferences("appPoints", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        // Save points globally for the app
+        editor.putInt("totalPoints", points);
+        editor.apply();
+    }
+
 
     private void displayMessage(String message) {
         TextView messageTextView = findViewById(R.id.messageTextView);

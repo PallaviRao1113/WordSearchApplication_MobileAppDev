@@ -1,7 +1,12 @@
 package com.example.wordsearchapplication_mobileappdev;
 
+import static com.example.wordsearchapplication_mobileappdev.CheckPointsActivity.totalpoints;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -105,7 +110,7 @@ public class FourthActivity extends AppCompatActivity implements CountDownTimerV
     private boolean isWord(String selectedWord) {
         // Implement your logic to check if the selected word is valid
         // For simplicity, let's check against a predefined list of words
-        String[] validWords = {"cat", "dog", "cow", "sun", "job", "dad", "mom", "kid", "car", "rug", "boy", "two", "day"};
+        String[] validWords = {"candy", "straw", "berry", "truck", "apple", "happy", "block", "fruit", "tiger", "river", "child", "money"};
         return Arrays.asList(validWords).contains(selectedWord);
     }
 
@@ -127,17 +132,34 @@ public class FourthActivity extends AppCompatActivity implements CountDownTimerV
     }
 
     private void awardPoints(int pointsToAdd) {
-        points += pointsToAdd;
-        displayMessage("That's right! Here is " + pointsToAdd + " stars!");
+        // points += pointsToAdd;
+        totalpoints++;
+        displayMessage("That's right! Here is " + pointsToAdd + " star!");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences();
     }
 
     private void deductPoints(int pointsToDeduct) {
-        points -= pointsToDeduct;
-        if (points < 0) {
-            points = 0;
+        //points -= pointsToDeduct;
+        totalpoints--;
+        if (totalpoints < 0) {
+            totalpoints = 0;
         }
-        displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " stars");
+        displayMessage("Sorry, that's wrong! -" + pointsToDeduct + " star");
+
+        // Save the updated points to SharedPreferences
+        savePointsToSharedPreferences();
     }
+
+    private void savePointsToSharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences("appPoints", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        // Save points globally for the app
+        editor.putInt("points", totalpoints);
+        editor.apply();
+    }
+
 
     private void displayMessage(String message) {
         TextView messageTextView = findViewById(R.id.messageTextView);
