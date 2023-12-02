@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1B03A9F4"
@@ -12,12 +13,14 @@
         android:id="@+id/errorMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginBottom="33dp"
         android:text="An error occurred!"
         android:textColor="@color/design_default_color_error"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/backToMainButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,12 +28,15 @@
         android:id="@+id/backToMainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to Main Activity"
-        android:textSize="18sp"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="347dp"
         android:backgroundTint="#03A9F4"
         android:onClick="gotoMainActivity"
-        app:layout_constraintTop_toBottomOf="@+id/errorMessage"
+        android:text="Back to Main Activity"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
