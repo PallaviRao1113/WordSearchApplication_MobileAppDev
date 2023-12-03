@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button easy = findViewById(R.id.easy);
         Button medium = findViewById(R.id.medium);
         Button hard = findViewById(R.id.button);
+        Button bonusButton = findViewById(R.id.bonusButton);
 
         Button checkPointsButton = findViewById(R.id.checkPointsButton);
 
@@ -43,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 gotoThirdActivty();
-                timerView.startTimer(15 * 60 * 1000); // 15 minutes in milliseconds
+                timerView.startTimer(3 * 60 * 1000); // 15 minutes in milliseconds
             }
         });
         medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gotoFourthActivity();
-                timerView.startTimer(10 * 60 * 1000); // 10 minutes in milliseconds
+                timerView.startTimer(2 * 60 * 1000); // 10 minutes in milliseconds
             }
         });
 
@@ -58,15 +59,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 gotoFifthActivity();
-                timerView.startTimer(5 * 60 * 1000); // 5 minutes in milliseconds
+                timerView.startTimer(1 * 60 * 1000); // 5 minutes in milliseconds
             }
         });
+
+
+        bonusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSixthActivity();
+                timerView.startTimer(1 * 60 * 1000); // 5 minutes in milliseconds
+            }
+        });
+
+
     }
     public void gotoSecondActivty (View v)
     {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
+
 
     public void gotoThirdActivty ()
     {
@@ -125,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
+    public void gotoSixthActivity ()
+    {
+        Intent intent = new Intent(this, SixthActivity.class);
+        startActivity(intent);
+    }
 
     public void gotoThirdActivity (View v)
     {
@@ -137,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FourthActivity.class);
         startActivity(intent);
     }
+
+
 
     public void gotoFifthActivity ()
     {

@@ -18,8 +18,8 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FifthActivity extends AppCompatActivity implements CountDownTimerView.OnTimerFinishListener{
-    private static final int GRID_SIZE = 7;
+public class SixthActivity extends AppCompatActivity implements CountDownTimerView.OnTimerFinishListener{
+    private static final int GRID_SIZE = 10;
     private StringBuilder selectedLetters = new StringBuilder();
     public CountDownTimerView timerr;
 
@@ -28,7 +28,7 @@ public class FifthActivity extends AppCompatActivity implements CountDownTimerVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fifth);
+        setContentView(R.layout.activity_sixth);
         gridLayout = findViewById(R.id.gridLayout);
         generateAndDisplayLayout();
         timerr = findViewById(R.id.timerr);
@@ -36,7 +36,7 @@ public class FifthActivity extends AppCompatActivity implements CountDownTimerVi
         timerr.startTimer(1 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
-        String[] words = {"ladybug", "natural", "science", "vitamin", "victory", "weather", "teacher", "fiction", "fifteen", "imagine"};
+        String[] words = {"strawberry", "friendship", "definition"};
         int randomRow = (int) (Math.random() * GRID_SIZE);
         for (int i = 0; i < GRID_SIZE; i++) {
             char[] rowContent;
@@ -67,7 +67,7 @@ public class FifthActivity extends AppCompatActivity implements CountDownTimerVi
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FifthActivity.this, "Button Clicked: " + buttonText, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SixthActivity.this, "Button Clicked: " + buttonText, Toast.LENGTH_SHORT).show();
                 handleLetterButtonClick(buttonText);
             }
         });
@@ -84,7 +84,7 @@ public class FifthActivity extends AppCompatActivity implements CountDownTimerVi
         // Log the clicked letter
         Log.d("ButtonClicked", "Clicked Letter: " + letter);
 
-        if (selectedLetters.length() == 7) {
+        if (selectedLetters.length() == 10) {
             String selectedWord = selectedLetters.toString().toLowerCase();
             Log.d("WordCheck", "Selected Word: " + selectedWord);
 
@@ -110,7 +110,7 @@ public class FifthActivity extends AppCompatActivity implements CountDownTimerVi
     private boolean isWord(String selectedWord) {
         // Implement your logic to check if the selected word is valid
         // For simplicity, let's check against a predefined list of words
-        String[] validWords = {"ladybug", "natural", "science", "vitamin", "victory", "weather", "teacher", "fiction", "fifteen", "imagine"};
+        String[] validWords = {"strawberry", "friendship", "definition"};
         return Arrays.asList(validWords).contains(selectedWord);
     }
 

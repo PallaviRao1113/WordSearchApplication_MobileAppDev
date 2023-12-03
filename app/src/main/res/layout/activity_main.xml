@@ -40,6 +40,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
     </RelativeLayout>
@@ -63,13 +68,14 @@
         android:id="@+id/bonusButton"
         android:layout_width="333dp"
         android:layout_height="53dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="gotoSixthActivity"
         android:text="BONUS CHALLENGE!"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/checkPointsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        android:textSize="25sp"
-        android:backgroundTint="#03A9F4"/>
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 
     <Button

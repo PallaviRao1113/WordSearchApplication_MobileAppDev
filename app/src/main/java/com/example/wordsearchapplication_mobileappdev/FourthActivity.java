@@ -33,7 +33,7 @@ public class FourthActivity extends AppCompatActivity implements CountDownTimerV
         generateAndDisplayLayout();
         timerrr = findViewById(R.id.timerrr);
         timerrr.setOnTimerFinishListener(this);
-        timerrr.startTimer(10 * 60 * 1000);
+        timerrr.startTimer(2 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
         String[] words = {"candy", "straw", "berry", "truck", "apple", "happy", "block", "fruit", "tiger", "river", "child", "money"};

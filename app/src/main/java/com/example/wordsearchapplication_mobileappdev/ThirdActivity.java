@@ -35,7 +35,7 @@ public class ThirdActivity extends AppCompatActivity implements CountDownTimerVi
         generateAndDisplayLayout();
         timerr = findViewById(R.id.timerr);
         timerr.setOnTimerFinishListener(this); // Set the listener
-        timerr.startTimer(15 * 60 * 1000);
+        timerr.startTimer(3 * 60 * 1000);
     }
     private void generateAndDisplayLayout() {
         String[] words = {"cat", "dog", "cow", "sun", "job", "dad", "mom", "kid", "car", "rug", "boy", "two", "day"};
