@@ -25,7 +25,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:backgroundTint="#03A9F4"
-        android:text="Back" />
+        android:text="Back To Main Screen"
+        android:textSize="25sp"/>
 
     <ImageView
         android:id="@+id/imageView"
